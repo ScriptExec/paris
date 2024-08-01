@@ -27,7 +27,7 @@ macro_rules! log {
 #[macro_export]
 macro_rules! info {
     ($($arg:tt)*) => {
-        $crate::output::format_stdout(format!("<cyan><info></> {}", format!($($arg)*)), "\n")
+        $crate::output::format_stdout(format!("<cyan>Info:</> {}", format!($($arg)*)), "\n")
     }
 }
 
@@ -43,7 +43,7 @@ macro_rules! info {
 #[macro_export]
 macro_rules! error {
     ($($arg:tt)*) => {
-        $crate::output::format_stderr(format!("<red><cross></> {}", format!($($arg)*)), "\n")
+        $crate::output::format_stderr(format!("<red>Error:</> {}", format!($($arg)*)), "\n")
     }
 }
 
@@ -59,7 +59,7 @@ macro_rules! error {
 #[macro_export]
 macro_rules! warn {
     ($($arg:tt)*) => {
-        $crate::output::format_stdout(format!("<yellow><warn></> {}", format!($($arg)*)), "\n")
+        $crate::output::format_stdout(format!("<yellow>Warn:</> {}", format!($($arg)*)), "\n")
     }
 }
 

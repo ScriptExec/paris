@@ -68,7 +68,7 @@ impl<'a> Logger<'a> {
     ///
     /// Equivalent macro: `info!()`
     pub fn info<T: Display>(&mut self, message: T) -> &mut Self {
-        self.stdout(format!("<cyan><info></> {}", message))
+        self.stdout(format!("<cyan>Info:</> {}", message))
     }
 
     /// Prints to stdout and adds some success flair to text
@@ -96,7 +96,7 @@ impl<'a> Logger<'a> {
     ///
     /// Equivalent macro: `warn!()`
     pub fn warn<T: Display>(&mut self, message: T) -> &mut Self {
-        self.stdout(format!("<yellow><warn></> {}", message))
+        self.stdout(format!("<yellow>Warn:</> {}", message))
     }
 
     /// Prints to stderr and adds some error flare to text
@@ -110,7 +110,7 @@ impl<'a> Logger<'a> {
     ///
     /// Equivalent macro: `error!()`
     pub fn error<T: Display>(&mut self, message: T) -> &mut Self {
-        self.stderr(format!("<red><cross></> {}", message))
+        self.stderr(format!("<red>Error:</> {}", message))
     }
 
     /// Prints a specified amount of newlines to stdout
