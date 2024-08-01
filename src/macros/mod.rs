@@ -79,6 +79,22 @@ macro_rules! success {
     }
 }
 
+/// Adds a cross icon to the log message,
+/// then writes to `stderr`.
+///
+/// # Example
+/// ```
+/// use paris::fail;
+///
+/// fail!("You failed...");
+/// ```
+#[macro_export]
+macro_rules! fail {
+    ($($arg:tt)*) => {
+        $crate::output::format_stderr(format!("<red><cross></> {}", format!($($arg)*)), "\n")
+    }
+}
+
 #[cfg(test)]
 mod tests {
     #[test]

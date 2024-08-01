@@ -65,6 +65,19 @@ fn success_macro() {
 
 #[test]
 #[cfg(not(feature = "no_logger"))]
+fn fail() {
+    let mut logger = Logger::new();
+    logger.fail("Something broke!!");
+}
+
+#[test]
+#[cfg(feature = "macros")]
+fn fail_macro() {
+    fail!("This is some fail from a macro");
+}
+
+#[test]
+#[cfg(not(feature = "no_logger"))]
 fn error() {
     let mut logger = Logger::new();
     logger.error("This is an error, but test should still work");

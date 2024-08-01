@@ -85,6 +85,20 @@ impl<'a> Logger<'a> {
         self.stdout(format!("<green><tick></> {}", message))
     }
 
+    /// Prints to stderr and adds some fail flair to text
+    ///
+    /// # Example
+    /// ```
+    /// # use paris::Logger;
+    /// # let mut logger = Logger::new();
+    /// logger.fail("Everything went horrible...");
+    /// ```
+    ///
+    /// Equivalent macro: `fail!()`
+    pub fn fail<T: Display>(&mut self, message: T) -> &mut Self {
+        self.stderr(format!("<red><cross></> {}", message))
+    }
+
     /// Prints to stdout and adds some warning flare to text
     ///
     /// # Example
